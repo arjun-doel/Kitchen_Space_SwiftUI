@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CardStack
 
 struct HomeView: View {
     @EnvironmentObject private var mealVM: MealsViewModel
@@ -53,13 +54,34 @@ extension HomeView {
     }
     
     private var cardStack: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack {
-                ForEach(mealVM.meals) { meal in
-                    CardView(meal: meal)
-                }
-            }
+//        ScrollView(.horizontal, showsIndicators: false) {
+//            LazyHStack {
+//                ForEach(mealVM.meals) { meal in
+//                    CardView(meal: meal)
+//                }
+//            }
+//        }
+        VStack(alignment: .center) {
+            CardStack(
+              direction: LeftRight.direction, // See below for directions
+              data: mealVM.meals,
+              onSwipe: { card, direction in // Closure to be called when a card is swiped.
+                print("Swiped \(card) to \(direction)")
+              },
+              content: { card, direction, isOnTop in // View builder function
+                CardView(meal: card)
+              }
+            )
+            .environment(\.cardStackConfiguration, CardStackConfiguration(
+              maxVisibleCards: 3,
+              swipeThreshold: 0.1,
+              cardOffset: 40,
+              cardScale: 0.2,
+              animation: .linear
+            ))
         }
+        .padding(20)
+        .offset(y: 50)
         .onChange(of: mealVM.searchTerm, perform: { value in
             Task {
                 await mealVM.getData(searchItem: value)
