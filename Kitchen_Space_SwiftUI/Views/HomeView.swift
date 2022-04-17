@@ -10,6 +10,7 @@ import CardStack
 
 struct HomeView: View {
     @EnvironmentObject private var mealVM: MealsViewModel
+    @State var reloadToken = UUID()
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
@@ -63,7 +64,7 @@ extension HomeView {
 //        }
         VStack(alignment: .center) {
             CardStack(
-              direction: LeftRight.direction, // See below for directions
+              direction: FourDirections.direction, // See below for directions
               data: mealVM.meals,
               onSwipe: { card, direction in // Closure to be called when a card is swiped.
                 print("Swiped \(card) to \(direction)")
@@ -72,6 +73,15 @@ extension HomeView {
                 CardView(meal: card)
               }
             )
+            .id(reloadToken)
+            .navigationBarItems(trailing:
+                  Button(action: {
+                    self.reloadToken = UUID()
+                    mealVM.meals = mealVM.meals.shuffled()
+                  }) {
+                    Text("Reload")
+                  }
+                )
             .environment(\.cardStackConfiguration, CardStackConfiguration(
               maxVisibleCards: 3,
               swipeThreshold: 0.1,
