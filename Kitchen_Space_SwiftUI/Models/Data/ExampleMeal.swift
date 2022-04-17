@@ -36,6 +36,6 @@ class ExampleMeal {
             strIngredients19: "",
             strIngredients20: "",
             strSource: ""
-        )
+        ),
     ]
 }
