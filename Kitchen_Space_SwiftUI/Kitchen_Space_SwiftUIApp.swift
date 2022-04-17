@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Kitchen_Space_SwiftUIApp: App {
+    @StateObject private var mealVM = MealsViewModel()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(mealVM)
         }
     }
 }

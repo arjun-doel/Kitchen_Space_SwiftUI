@@ -7,9 +7,13 @@
 
 import Foundation
 
+@MainActor
 class MealsViewModel: ObservableObject {
     
     @Published var meals: [Meal] = []
+    
+    //Typeahead search key
+    @Published var searchTerm: String = ""
     
     // Fetch data from URL
     func getData(searchItem: String) async {

@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var mealVM: MealsViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ZStack {
+                TextField("Search for meal", text: $mealVM.searchTerm)
+                    .padding()
+                    .textFieldStyle(.roundedBorder)
+                    .shadow(color: .gray, radius: 12, x: 0, y: 1)
+                
+                Spacer()
+            }
+            .navigationTitle("Kitchen Space")
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(MealsViewModel())
     }
 }
