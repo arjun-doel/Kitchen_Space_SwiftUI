@@ -10,6 +10,7 @@ import Foundation
 @MainActor
 class MealsViewModel: ObservableObject {
     
+    // All Meals from api
     @Published var meals: [Meal] = []
     
     //Typeahead search key
@@ -17,8 +18,11 @@ class MealsViewModel: ObservableObject {
     
     // Fetch data from URL
     func getData(searchItem: String) async {
+        // check if search key filled
         let key = searchItem.isEmpty ? "Chicken" : searchItem
         let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=\(key)"
+        
+        // check validity of URL string
         guard let url = URL(string: url) else {
             print("Invalid URL")
             return

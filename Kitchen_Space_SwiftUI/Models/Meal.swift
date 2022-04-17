@@ -17,7 +17,7 @@ struct Meal: Codable, Identifiable {
     let strCategory: String?
     let strArea: String?
     let strInstructions: String?
-    let strMealThumb: String?
+    let strMealThumb: String
     let strYoutube: String?
     let strIngredient1: String?
     let strIngredient2: String?

@@ -12,27 +12,10 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack() {
-                Spacer()
-                Spacer()
+            VStack(spacing: 0) {
                 Spacer()
                 textSearch
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack {
-                        ForEach(mealVM.meals) { meal in
-                            Text(meal.strMeal)
-                        }
-                    }
-                }
-                .onChange(of: mealVM.searchTerm, perform: { value in
-                    Task {
-                        await mealVM.getData(searchItem: value)
-                    }
-                })
-                .task {
-                    await mealVM.getData(searchItem: "")
-                }
+                cardStack
             }
             .navigationTitle("Kitchen Space")
         }
@@ -53,5 +36,23 @@ extension HomeView {
             .padding()
             .textFieldStyle(.roundedBorder)
             .shadow(color: .gray, radius: 12, x: 0, y: 1)
+    }
+    
+    private var cardStack: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack {
+                ForEach(mealVM.meals) { meal in
+                    CardView(meal: meal)
+                }
+            }
+        }
+        .onChange(of: mealVM.searchTerm, perform: { value in
+            Task {
+                await mealVM.getData(searchItem: value)
+            }
+        })
+        .task {
+            await mealVM.getData(searchItem: "")
+        }
     }
 }

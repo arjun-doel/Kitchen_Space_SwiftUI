@@ -15,6 +15,8 @@
 		726D7DB9280C758C001E1F21 /* examples.json in Resources */ = {isa = PBXBuildFile; fileRef = 726D7DB8280C758C001E1F21 /* examples.json */; };
 		726D7DBB280C76C8001E1F21 /* ExampleMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DBA280C76C8001E1F21 /* ExampleMeal.swift */; };
 		726D7DBE280C7885001E1F21 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DBD280C7885001E1F21 /* MealsViewModel.swift */; };
+		726D7DC0280C8BE6001E1F21 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DBF280C8BE6001E1F21 /* CardView.swift */; };
+		726D7DC3280C9111001E1F21 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 726D7DC2280C9111001E1F21 /* CachedAsyncImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		726D7DB8280C758C001E1F21 /* examples.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = examples.json; sourceTree = "<group>"; };
 		726D7DBA280C76C8001E1F21 /* ExampleMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMeal.swift; sourceTree = "<group>"; };
 		726D7DBD280C7885001E1F21 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
+		726D7DBF280C8BE6001E1F21 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726D7DC3280C9111001E1F21 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				726D7DB1280C6260001E1F21 /* HomeView.swift */,
+				726D7DBF280C8BE6001E1F21 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +132,9 @@
 			dependencies = (
 			);
 			name = Kitchen_Space_SwiftUI;
+			packageProductDependencies = (
+				726D7DC2280C9111001E1F21 /* CachedAsyncImage */,
+			);
 			productName = Kitchen_Space_SwiftUI;
 			productReference = 7243F55E280C0ED800E144E2 /* Kitchen_Space_SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +163,9 @@
 				Base,
 			);
 			mainGroup = 7243F555280C0ED800E144E2;
+			packageReferences = (
+				726D7DC1280C9111001E1F21 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = 7243F55F280C0ED800E144E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,6 +197,7 @@
 				726D7DBE280C7885001E1F21 /* MealsViewModel.swift in Sources */,
 				726D7DB6280C7528001E1F21 /* Meal.swift in Sources */,
 				7243F562280C0ED800E144E2 /* Kitchen_Space_SwiftUIApp.swift in Sources */,
+				726D7DC0280C8BE6001E1F21 /* CardView.swift in Sources */,
 				726D7DBB280C76C8001E1F21 /* ExampleMeal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		726D7DC1280C9111001E1F21 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:lorenzofiamingo/swiftui-cached-async-image.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		726D7DC2280C9111001E1F21 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726D7DC1280C9111001E1F21 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7243F556280C0ED800E144E2 /* Project object */;
 }
