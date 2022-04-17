@@ -10,6 +10,14 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var mealVM: MealsViewModel
     
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -17,7 +25,8 @@ struct HomeView: View {
                 textSearch
                 cardStack
             }
-            .navigationTitle("Kitchen Space")
+            .background(LinearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .bottom))
+            .navigationBarTitle("Kitchen Space")
             .sheet(item: $mealVM.sheetMeal) { meal in
                 DetailView(meal: meal)
             }
@@ -37,7 +46,10 @@ extension HomeView {
     private var textSearch: some View {
         TextField("Search for meal...", text: $mealVM.searchTerm)
             .padding()
-            .textFieldStyle(.roundedBorder)
+            .textFieldStyle(.plain)
+            .background(.ultraThinMaterial)
+            .cornerRadius(20)
+            .padding()
     }
     
     private var cardStack: some View {

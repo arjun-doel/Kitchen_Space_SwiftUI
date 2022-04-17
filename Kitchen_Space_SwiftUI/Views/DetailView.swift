@@ -11,12 +11,21 @@ import CachedAsyncImage
 struct DetailView: View {
     @EnvironmentObject var mealVM: MealsViewModel
     
+//    init() {
+//        //Use this if NavigationBarTitle is with Large Font
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+//
+//        //Use this if NavigationBarTitle is with displayMode = .inline
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+//    }
+    
     var meal: Meal
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
+                    titleView
                     detailImage
                     Divider()
                     subHeadline
@@ -32,8 +41,8 @@ struct DetailView: View {
                     }
                     .padding()
                 }
+                .offset(y: -90)
             }
-            .navigationTitle(meal.strMeal)
         }
     }
 }
@@ -46,6 +55,13 @@ struct DetailView_Previews: PreviewProvider {
 }
 
 extension DetailView {
+    private var titleView: some View {
+        Text(meal.strMeal)
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .padding()
+    }
+    
     private var detailImage: some View {
         CachedAsyncImage(url: URL(string: meal.strMealThumb), content: { image in
             image

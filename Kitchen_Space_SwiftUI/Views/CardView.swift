@@ -55,9 +55,12 @@ extension CardView {
     private var cardText: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(meal.strMeal)
+                .foregroundColor(.white)
                 .font(.headline)
             Text(meal.strArea ?? "")
+                .foregroundColor(.white)
                 .font(.subheadline)
+                .fontWeight(.light)
         }
         .padding()
         .offset(y: -100)
