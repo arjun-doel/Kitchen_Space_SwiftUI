@@ -17,21 +17,21 @@ class MealsViewModel: ObservableObject {
     
     // Fetch data from URL
     func getData(searchItem: String) async {
-        // Contains api link
-        let urlString = "www.themealdb.com/api/json/v1/1/search.php?s=\(searchItem.isEmpty ? searchItem : "chicken"))"
-        // Attempt to wrap api link in a URL
-        guard let url = URL(string: urlString) else {
+        let key = searchItem.isEmpty ? "Chicken" : searchItem
+        let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=\(key)"
+        guard let url = URL(string: url) else {
             print("Invalid URL")
             return
         }
-        // Attempt to call api
+        
         do {
+            // Get data from URL
             let (data, _) = try await URLSession.shared.data(from: url)
             if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
                 self.meals = decodedResponse.meals
             }
         } catch {
-            print("oops, something went wrong...")
+            print("Invalid data")
         }
     }
     

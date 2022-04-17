@@ -11,31 +11,37 @@ struct Response: Codable {
     var meals: [Meal]
 }
 
-struct Meal: Codable {
+struct Meal: Codable, Identifiable {
     let idMeal: String
     let strMeal: String
-    let strCategory: String
-    let strArea: String
-    let strInstructions: String
-    let strMealThumb: String
-    let strYoutube: String
-    let strIngredients1: String
-    let strIngredients2: String
-    let strIngredients3: String
-    let strIngredients4: String
-    let strIngredients5: String
-    let strIngredients6: String
-    let strIngredients9: String
-    let strIngredients10: String
-    let strIngredients11: String
-    let strIngredients12: String
-    let strIngredients13: String
-    let strIngredients14: String
-    let strIngredients15: String
-    let strIngredients16: String
-    let strIngredients17: String
-    let strIngredients18: String
-    let strIngredients19: String
-    let strIngredients20: String
-    let strSource: String
+    let strCategory: String?
+    let strArea: String?
+    let strInstructions: String?
+    let strMealThumb: String?
+    let strYoutube: String?
+    let strIngredient1: String?
+    let strIngredient2: String?
+    let strIngredient3: String?
+    let strIngredient4: String?
+    let strIngredient5: String?
+    let strIngredient6: String?
+    let strIngredient7: String?
+    let strIngredient8: String?
+    let strIngredient9: String?
+    let strIngredient10: String?
+    let strIngredient11: String?
+    let strIngredient12: String?
+    let strIngredient13: String?
+    let strIngredient14: String?
+    let strIngredient15: String?
+    let strIngredient16: String?
+    let strIngredient17: String?
+    let strIngredient18: String?
+    let strIngredient19: String?
+    let strIngredient20: String?
+    let strSource: String?
+    
+    var id: String {
+        idMeal
+    }
 }
