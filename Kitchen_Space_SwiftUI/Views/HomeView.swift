@@ -81,7 +81,7 @@ extension HomeView {
             ))
         }
         .padding(20)
-        .offset(y: 50)
+        .offset(y: 25)
         .onChange(of: mealVM.searchTerm, perform: { value in
             Task {
                 await mealVM.getData(searchItem: value)
