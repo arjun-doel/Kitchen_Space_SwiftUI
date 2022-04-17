@@ -26,7 +26,7 @@ struct HomeView: View {
                 cardStack
             }
             .background(LinearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .bottom))
-            .navigationBarTitle("Kitchen Space")
+            .navigationBarTitle("Kitchen Space Test")
             .sheet(item: $mealVM.sheetMeal) { meal in
                 DetailView(meal: meal)
             }
