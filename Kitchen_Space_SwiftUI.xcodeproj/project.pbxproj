@@ -17,6 +17,7 @@
 		726D7DBE280C7885001E1F21 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DBD280C7885001E1F21 /* MealsViewModel.swift */; };
 		726D7DC0280C8BE6001E1F21 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DBF280C8BE6001E1F21 /* CardView.swift */; };
 		726D7DC3280C9111001E1F21 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 726D7DC2280C9111001E1F21 /* CachedAsyncImage */; };
+		726D7DC5280C94B4001E1F21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DC4280C94B4001E1F21 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		726D7DBA280C76C8001E1F21 /* ExampleMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMeal.swift; sourceTree = "<group>"; };
 		726D7DBD280C7885001E1F21 /* MealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
 		726D7DBF280C8BE6001E1F21 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		726D7DC4280C94B4001E1F21 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				726D7DB1280C6260001E1F21 /* HomeView.swift */,
+				726D7DC4280C94B4001E1F21 /* DetailView.swift */,
 				726D7DBF280C8BE6001E1F21 /* CardView.swift */,
 			);
 			path = Views;
@@ -196,6 +199,7 @@
 				726D7DB2280C6260001E1F21 /* HomeView.swift in Sources */,
 				726D7DBE280C7885001E1F21 /* MealsViewModel.swift in Sources */,
 				726D7DB6280C7528001E1F21 /* Meal.swift in Sources */,
+				726D7DC5280C94B4001E1F21 /* DetailView.swift in Sources */,
 				7243F562280C0ED800E144E2 /* Kitchen_Space_SwiftUIApp.swift in Sources */,
 				726D7DC0280C8BE6001E1F21 /* CardView.swift in Sources */,
 				726D7DBB280C76C8001E1F21 /* ExampleMeal.swift in Sources */,

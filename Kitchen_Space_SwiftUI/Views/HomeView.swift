@@ -18,6 +18,9 @@ struct HomeView: View {
                 cardStack
             }
             .navigationTitle("Kitchen Space")
+            .sheet(item: $mealVM.sheetMeal) { meal in
+                DetailView(meal: meal)
+            }
         }
     }
 }
@@ -35,7 +38,6 @@ extension HomeView {
         TextField("Search for meal...", text: $mealVM.searchTerm)
             .padding()
             .textFieldStyle(.roundedBorder)
-            .shadow(color: .gray, radius: 12, x: 0, y: 1)
     }
     
     private var cardStack: some View {

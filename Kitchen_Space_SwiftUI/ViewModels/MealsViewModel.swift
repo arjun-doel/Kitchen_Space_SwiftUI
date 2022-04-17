@@ -16,6 +16,9 @@ class MealsViewModel: ObservableObject {
     //Typeahead search key
     @Published var searchTerm: String = ""
     
+    //Sheet meal value
+    @Published var sheetMeal: Meal? = nil
+    
     // Fetch data from URL
     func getData(searchItem: String) async {
         // check if search key filled
