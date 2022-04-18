@@ -18,6 +18,7 @@
 		726D7DC0280C8BE6001E1F21 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DBF280C8BE6001E1F21 /* CardView.swift */; };
 		726D7DC3280C9111001E1F21 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 726D7DC2280C9111001E1F21 /* CachedAsyncImage */; };
 		726D7DC5280C94B4001E1F21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D7DC4280C94B4001E1F21 /* DetailView.swift */; };
+		726D7DC8280CA50E001E1F21 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = 726D7DC7280CA50E001E1F21 /* CardStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				726D7DC3280C9111001E1F21 /* CachedAsyncImage in Frameworks */,
+				726D7DC8280CA50E001E1F21 /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +139,7 @@
 			name = Kitchen_Space_SwiftUI;
 			packageProductDependencies = (
 				726D7DC2280C9111001E1F21 /* CachedAsyncImage */,
+				726D7DC7280CA50E001E1F21 /* CardStack */,
 			);
 			productName = Kitchen_Space_SwiftUI;
 			productReference = 7243F55E280C0ED800E144E2 /* Kitchen_Space_SwiftUI.app */;
@@ -168,6 +171,7 @@
 			mainGroup = 7243F555280C0ED800E144E2;
 			packageReferences = (
 				726D7DC1280C9111001E1F21 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				726D7DC6280CA50E001E1F21 /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */,
 			);
 			productRefGroup = 7243F55F280C0ED800E144E2 /* Products */;
 			projectDirPath = "";
@@ -413,6 +417,14 @@
 				kind = branch;
 			};
 		};
+		726D7DC6280CA50E001E1F21 /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dadalar/SwiftUI-CardStackView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -420,6 +432,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 726D7DC1280C9111001E1F21 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		726D7DC7280CA50E001E1F21 /* CardStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726D7DC6280CA50E001E1F21 /* XCRemoteSwiftPackageReference "SwiftUI-CardStackView" */;
+			productName = CardStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
