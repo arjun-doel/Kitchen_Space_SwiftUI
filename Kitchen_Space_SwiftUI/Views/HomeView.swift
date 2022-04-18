@@ -52,20 +52,14 @@ extension HomeView {
             .background(.ultraThinMaterial)
             .cornerRadius(20)
             .padding()
+            .submitLabel(.done)
     }
     
     private var cardStack: some View {
-//        ScrollView(.horizontal, showsIndicators: false) {
-//            LazyHStack {
-//                ForEach(mealVM.meals) { meal in
-//                    CardView(meal: meal)
-//                }
-//            }
-//        }
         VStack(alignment: .center) {
             CardStack(
-              direction: FourDirections.direction, // See below for directions
-              data: mealVM.meals,
+              direction: EightDirections.direction, // See below for directions
+              data: mealVM.meals.shuffled(),
               onSwipe: { card, direction in // Closure to be called when a card is swiped.
                 print("Swiped \(card) to \(direction)")
               },
@@ -80,10 +74,12 @@ extension HomeView {
                     mealVM.meals = mealVM.meals.shuffled()
                   }) {
                     Text("Reload")
+                          .fontWeight(.light)
+                          .foregroundColor(.white)
                   }
                 )
             .environment(\.cardStackConfiguration, CardStackConfiguration(
-              maxVisibleCards: 3,
+              maxVisibleCards: 6,
               swipeThreshold: 0.1,
               cardOffset: 40,
               cardScale: 0.2,
