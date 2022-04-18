@@ -44,7 +44,7 @@ extension CardView {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 350, height: 500)
+                .frame(width: 350, height: 440)
                 .clipped()
         }, placeholder: {
             ProgressView()
